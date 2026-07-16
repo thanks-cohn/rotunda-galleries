@@ -1,15 +1,14 @@
 import type { NextConfig } from "next";
 
-const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
+const isGitHubPages = process.env.DEPLOY_TARGET === "github-pages";
 
-const nextConfig: NextConfig = {
-  output: "export",
-  trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
-  basePath: isGitHubPages ? "/rotunda-galleries" : "",
-  assetPrefix: isGitHubPages ? "/rotunda-galleries/" : "",
-};
+const nextConfig: NextConfig = isGitHubPages
+  ? {
+      output: "export",
+      trailingSlash: true,
+      basePath: "/rotunda-galleries",
+      images: { unoptimized: true },
+    }
+  : {};
 
 export default nextConfig;
