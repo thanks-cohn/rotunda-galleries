@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aperture — Family Gallery",
+  title: "Q-Bunny Career <333",
   description: "A collection of photographs and visual stories.",
   icons: {
     icon: "/favicon.svg",
